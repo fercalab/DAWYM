@@ -16,7 +16,7 @@
     <a title="netbeens" href="https://www.w3c.es/"  target="_blank">
 	  <img src="<?php echo $_layoutParams['ruta_img'];?>logonet.jpeg" alt="netbeens" />
     </a>
-	<span>desarrollado por Fernando Calatayud Lopez</span>
+	<span><?php echo SLOGAN_APP; ?></span>
 </div>
 </body>
 </html>

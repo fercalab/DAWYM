@@ -1,0 +1,32 @@
+<div id="header">
+     <img src=
+        "<?php echo $_layoutParams['ruta_img'];?>dawymLogo.png"
+     alt="Desarrollo de Aplicaciones" title="Desarrollo de Aplicaciones">
+
+    <h1><?php echo NOMBRE_APP; ?></h1>
+    <h4><?php echo SLOGAN_APP; ?></h4>
+
+
+</div>
+<div id="menu">
+	<?php
+       if(isset($_layoutParams['menu'])){
+
+       	  for ($i=0; $i<count($_layoutParams['menu']);$i++) {
+
+       	  	 if ($_layoutParams['menu'][$i]['id'] == $item) {
+       	  	 	$estilo = 'botonActivado';
+       	  	 }else{
+       	  	 	$estilo = 'botonMenu';
+       	  	 }
+            ?>
+             <div class="<?php echo $estilo; ?>">
+                 <a href="<?php echo $_layoutParams['menu'][$i]['enlace']; ?>">
+                 	<?php echo $_layoutParams['menu'][$i]['titulo']; ?>
+                 </a>
+             </div>
+            <?php
+       	  }
+       }
+	?>
+</div>

@@ -9,11 +9,26 @@ class View {
 
     public function renderizar($vista, $item = false) {
 
+        $menuParams = array (
+                array (
+                       'id'=>'inicio',
+                       'titulo'=>'inicio',
+                       'enlace'=>BASE_URL
+                    ),
+                array (
+                       'id'=>'materias',
+                       'titulo'=>'materias',
+                       'enlace'=>BASE_URL.'materias'
+                    )
+            );
+
         $_layoutParams= array(
                             'ruta_css'=> BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/css/',
                             'ruta_img'=> BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/img/',
-                            'ruta_js'=> BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/js/'
+                            'ruta_js'=> BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/js/',
+                            'menu'=> $menuParams
                         );
+        
         
     	$rutaView= ROOT.'views'.DS.$this->_controlador.DS.$vista.'.phtml';
 

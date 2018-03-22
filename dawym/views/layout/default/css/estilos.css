@@ -9,11 +9,14 @@ h1 { margin: 0 0 0 100px;
 h4 { margin: 0 0 0 110px; }
 
 .clear { clear: both; }
-#header { display: block; }
+#header { float: left; width: 50%; }
 #header img { width: 50px;
             height: 50px;
             margin: 20px 0 0 100px; 
           }
+#menu { float: right; width: 50%;}
+  .botonActivado, .botonMenu { display: block; float: left; margin-left: 26px; }
+    .botonActivado a { text-shadow: 1px .5px #F00; color: #000;}          
 #materias, #conceptos { margin: 10px 0 60px 110px;}
   #materias th { text-align: left;
                  text-indent: 10px;
