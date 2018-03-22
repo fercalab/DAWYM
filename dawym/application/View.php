@@ -19,7 +19,12 @@ class View {
                        'id'=>'materias',
                        'titulo'=>'materias',
                        'enlace'=>BASE_URL.'materias'
-                    )
+                    ),
+                array (
+                       'id'=>'admin',
+                       'titulo'=>'admin',
+                       'enlace'=>BASE_URL.'admin'
+                    ),
             );
 
         $_layoutParams= array(
@@ -35,7 +40,7 @@ class View {
     	if(is_readable($rutaView)) {
 
                include_once ROOT.'views'.DS.'layout'.DS.DEFAULT_LAYOUT.DS.'header.php';   
-    		   include_once $rutaView;
+    		       include_once $rutaView;
                include_once ROOT.'views'.DS.'layout'.DS.DEFAULT_LAYOUT.DS.'footer.php'; 
 
     	} else {

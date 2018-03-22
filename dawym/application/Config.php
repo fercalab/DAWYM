@@ -4,5 +4,5 @@ define('DEFAULT_CONTROLLER', 'index');
 define('DEFAULT_LAYOUT', 'default');
 define('NOMBRE_APP', 'DAWYM');
 define('SLOGAN_APP', 'Desarrollo de Aplicaciones Web Y Multiplataforma');
-define('GRUPO_APP','Beatriz Soria, Letizia Sanchez, Victor Monge, Fernando Calatayud');
+define('GRUPO_APP','Beatriz Soria, Letizia Sanchez, Victor Moreno, Fernando Calatayud');
 ?>
