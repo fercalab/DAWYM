@@ -18,13 +18,13 @@ class View {
                 array (
                        'id'=>'materias',
                        'titulo'=>'materias',
-                       'enlace'=>BASE_URL.'materias'
+                       'enlace'=>BASE_URL
                     ),
                 array (
                        'id'=>'admin',
                        'titulo'=>'admin',
                        'enlace'=>BASE_URL.'admin'
-                    ),
+                    )
             );
 
         $_layoutParams= array(

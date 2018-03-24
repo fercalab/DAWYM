@@ -1,0 +1,35 @@
+<div id="header">
+
+<div id="menu">
+	<?php
+       if(isset($_layoutParams['menu'])){
+
+       	  for ($i=0; $i<count($_layoutParams['menu']);$i++) {
+
+       	  	 ($_layoutParams['menu'][$i]['id'] == $item)? $estilo = 'botonActivado'
+       	  	                                            : $estilo = 'botonMenu';
+       	  	 
+            ?>
+             <div class="<?php echo $estilo; ?>">
+                 <a href="<?php echo $_layoutParams['menu'][$i]['enlace']; ?>">
+                 	<?php echo $_layoutParams['menu'][$i]['titulo']; ?>
+                 </a>
+             </div>
+            <?php
+       	  }
+       }
+	?>
+</div>
+
+     <img src=
+        "<?php echo $_layoutParams['ruta_img'];?>dawymLogo.png"
+     alt="Desarrollo de Aplicaciones" title="Desarrollo de Aplicaciones">
+
+    <h1>ADMINISTRACION</h1>
+
+    <a href="<?php BASE_URL; ?>admin/newmateria"> CREAR NUEVA MATERIA</a>
+
+    <a href=""> CREAR NUEVA UFO</a>
+
+    <a href=""> CREAR NUEVO CONCEPTO</a>
+</div>   

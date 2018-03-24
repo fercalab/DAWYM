@@ -10,12 +10,16 @@ h4 { margin: 0 0 0 110px; }
 
 .clear { clear: both; }
 #header { float: left; width: 50%; }
-#header img { width: 50px;
-            height: 50px;
-            margin: 20px 0 0 100px; 
-          }
+#headerlong { float: left; width: 100%; }
+  #header img, #headerlong img { width: 50px;
+                                 height: 50px;
+                                 margin: 20px 0 0 100px; 
+                                }
+  #header form { text-align: center; }                              
 #menu { float: right; width: 50%;}
-  .botonActivado, .botonMenu { display: block; float: left; margin-left: 26px; }
+  .botonActivado, .botonMenu { display: block;
+                               float: left; 
+                               margin-left: 26px; }
     .botonActivado a { text-shadow: 1px .5px #F00; color: #000;}          
 #materias, #conceptos { margin: 10px 0 60px 110px;}
   #materias th { text-align: left;
@@ -28,11 +32,12 @@ h4 { margin: 0 0 0 110px; }
                        }
 #conceptos { color: #000;}
   #conceptos th { text-align: left;
+
                  color:#808080;
                  text-indent: 10px;
                  cursor: pointer; 
                }
-  #conceptos p { text-indent: 20px; font-size: 1.2em;}         
+  #conceptos p, li { text-indent: 20px; font-size: 1.2em;}         
 .termino { color: blue;
            text-indent: 100px; 
          }

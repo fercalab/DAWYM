@@ -1,0 +1,67 @@
+<div id="headerlong">
+
+   <div id="menu">
+  <?php
+       if(isset($_layoutParams['menu'])){
+
+          for ($i=0; $i<count($_layoutParams['menu']);$i++) {
+
+             ($_layoutParams['menu'][$i]['id'] == $item)? $estilo = 'botonActivado'
+                                                        : $estilo = 'botonMenu';
+             
+            ?>
+             <div class="<?php echo $estilo; ?>">
+                 <a href="<?php echo $_layoutParams['menu'][$i]['enlace']; ?>">
+                  <?php echo $_layoutParams['menu'][$i]['titulo']; ?>
+                 </a>
+             </div>
+            <?php
+          }
+       }
+   ?>
+    </div>
+
+     <img src=
+        "<?php echo $_layoutParams['ruta_img'];?>dawymLogo.png"
+     alt="Desarrollo de Aplicaciones" title="Desarrollo de Aplicaciones">
+
+    <h1><?php echo NOMBRE_APP; ?></h1>
+   <h4>
+    <?php 
+       if(isset($this->ufo[0]["nombre"])){
+            echo $this->ufo[0]["nombre"];
+       } else {
+            echo "Listado de conceptos";
+       }
+    ?>	
+    </h4>
+
+ 
+
+  <?php $num_conceptos = count($this->ufo); ?>
+  <div id="conceptos" class="concepto"> 
+   <table>
+    <?php for($n=0;$n<$num_conceptos;$n++){ ?>
+        <tr>
+            <th>
+            <?php
+               echo  '<a href="#">'. $this->ufo[$n]['palabra'].'</a> <p>'. $this->ufo[$n]['concepto'].'</p>';
+            ?>
+            </th>            
+        </tr>
+         
+     <?php } ?>
+    </table>
+   </div>
+</div>
+
+
+
+<div id="footerMini">
+
+</div>
+</body>
+</html>
+<!--     
+
+ 

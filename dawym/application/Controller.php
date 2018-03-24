@@ -24,6 +24,18 @@ abstract class Controller {
 		}
 	}
 
+	protected function getTexto($value) {
+ 
+         if (isset($_POST[$value]) && !empty($_POST[$value])) {
+
+         	$_POST[$value] = htmlspecialchars($_POST[$value], ENT_QUOTES);
+
+         	return $_POST[$value];
+         }
+
+         return '';
+	}
+
 }
 
 ?>
