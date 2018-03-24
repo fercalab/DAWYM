@@ -20,12 +20,12 @@
   <?php $num_ufos = count($this->materia); ?>
   <div id="materias"> 
      <table>
-      <?php for($n=0;$n<$num_ufos;$n++){ ?>
+      <?php for($i=0;$i<$num_ufos;$i++){ ?>
         <tr>
             
             <th>
             <?php
-               echo  '<a href="../ufo/index.phtml?ufo='.$this->materia[$n]['id'].'">'. $this->materia[$n]['nombre'].'</a>';
+               echo  '<a href="../ufo/index.phtml?ufo='.$this->materia[$i]['id'].'">'. $this->materia[$i]['nombre'].'</a>';
              ?>
             </th>
          </tr>
@@ -44,13 +44,13 @@
              ($_layoutParams['menu'][$i]['id'] == $item)? $estilo = 'botonActivado'
                                                         : $estilo = 'botonMenu';
              
-            ?>
+  ?>
              <div class="<?php echo $estilo; ?>">
                  <a href="<?php echo $_layoutParams['menu'][$i]['enlace']; ?>">
                   <?php echo $_layoutParams['menu'][$i]['titulo']; ?>
                  </a>
              </div>
-            <?php
+  <?php
           }
        }
   ?>

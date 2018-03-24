@@ -20,7 +20,16 @@ h4 { margin: 0 0 0 110px; }
   .botonActivado, .botonMenu { display: block;
                                float: left; 
                                margin-left: 26px; }
-    .botonActivado a { text-shadow: 1px .5px #F00; color: #000;}          
+    .botonActivado a { text-shadow: 1px .5px #F00; color: #000;}
+
+
+#contenido {  float: right; width: 50%; }
+  #aparecenmaterias { text-align: center; display: none; }
+  #aparecenufos {  display: none; }
+    #aparecenmaterias h2, #aparecenufos h2 { margin: 120px 0 50px 0; }
+    #aparecenmaterias a, #aparecenufos a { margin: 0 150px; }
+
+
 #materias, #conceptos { margin: 10px 0 60px 110px;}
   #materias th { text-align: left;
                  text-indent: 10px;
@@ -30,6 +39,7 @@ h4 { margin: 0 0 0 110px; }
     #materias th:hover { color:red;
                          text-shadow: 1px .5px #000;
                        }
+
 #conceptos { color: #000;}
   #conceptos th { text-align: left;
 
@@ -43,7 +53,17 @@ h4 { margin: 0 0 0 110px; }
          }
   .termino dfn { color: #000;
                  font-weight: bold;
-               }                                    
+               }
+
+#menuAdmin { text-align: center; }
+.botonAdmin { margin: 22px 18px; }
+  .botonAdmin a { color: #630;
+                 border: ridge #0F0;
+                 border-radius: 10px;
+                 padding: 3px 10px;
+                  }
+  .botonAdmin a:hover { background-color: #77F; color: red; }
+                                                   
 #footer { position: absolute;
           bottom: 0px;}
    #footer a img { width: 50px;

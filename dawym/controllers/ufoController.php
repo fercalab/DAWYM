@@ -1,7 +1,7 @@
 <?php
 class ufoController extends Controller {
 
-    
+    private $ufo;
 
 	public function __construct() {
 		parent::__construct();	

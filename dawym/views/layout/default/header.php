@@ -9,7 +9,7 @@
 <title> <?php if(isset($this->titulo)) echo $this->titulo; ?> </title>
 <link rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>estilos.css"/>
 <link rel="shortcut icon" href="<?php echo $_layoutParams['ruta_img'];?>dawymIco.ico"/>
-<script type="text/javascript" src="../public/js/daw.js"></script>
+<script type="text/javascript" src="<?php echo $_layoutParams['ruta_js'];?>daw.js"></script>
 </head>
 
 <body>

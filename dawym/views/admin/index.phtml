@@ -9,13 +9,13 @@
        	  	 ($_layoutParams['menu'][$i]['id'] == $item)? $estilo = 'botonActivado'
        	  	                                            : $estilo = 'botonMenu';
        	  	 
-            ?>
+    ?>
              <div class="<?php echo $estilo; ?>">
                  <a href="<?php echo $_layoutParams['menu'][$i]['enlace']; ?>">
                  	<?php echo $_layoutParams['menu'][$i]['titulo']; ?>
                  </a>
              </div>
-            <?php
+    <?php
        	  }
        }
 	?>
@@ -26,10 +26,80 @@
      alt="Desarrollo de Aplicaciones" title="Desarrollo de Aplicaciones">
 
     <h1>ADMINISTRACION</h1>
+     <h4>CREAR</h4>
+  <div id="menuAdmin">
 
-    <a href="<?php BASE_URL; ?>admin/newmateria"> CREAR NUEVA MATERIA</a>
+    <div class="botonAdmin" id="botonAdminCreaMat">
+    	<a href="<?php BASE_URL; ?>admin/newmateria"> CREAR NUEVA MATERIA</a>
+    </div>
+    
+    <div class="botonAdmin" id="botonAdminCreaUfo" onclick="vermateria();">
+    	<a href="#"> CREAR NUEVA UFO</a>
+    </div>
 
-    <a href=""> CREAR NUEVA UFO</a>
+    <div class="botonAdmin" id="botonAdminCreaConcepto" onclick="verufo()">
+    	<a href="#"> CREAR NUEVO CONCEPTO</a>
+    </div>
 
-    <a href=""> CREAR NUEVO CONCEPTO</a>
-</div>   
+  </div> 
+  <hr><br><hr>
+  <h4>MODIFICAR</h4>
+  <div id="menuAdmin">
+
+    <div class="botonAdmin">
+    	<a href="<?php BASE_URL; ?>admin/updatemateria"> MODIFICAR MATERIA</a>
+    </div>
+    
+    <div class="botonAdmin">
+    	<a href=""> MODIFICAR UFO</a>
+    </div>
+
+    <div class="botonAdmin">
+    	<a href=""> MODIFICAR CONCEPTO</a>
+    </div>
+
+  </div> 
+  <hr><br><hr>
+
+
+</div>
+<div id="contenido">
+
+   <div id="aparecenmaterias">
+     <?php $num_materia = count($this->materia); ?>
+     <h2>ESCOGE MATERIA PARA CREAR UFOS</h2>
+       <table>
+   	    <?php for($i=0; $i<$num_materia ; $i++) { ?>
+          <tr>
+            <th>
+            <?php
+               echo  '<a href="admin/newufo/'.$this->materia[$i]['id'].'">'. $this->materia[$i]['nombre'].'</a>';
+            ?>
+            </th>
+          </tr>
+        <?php	
+           }        
+        ?>
+       </table>
+   </div>
+
+   <div id="aparecenufos">
+   	 <?php $num_materia = count($this->materia); ?>
+    <h2>EN QUE MATERIA QUIERES CREAR NUEVOS CONCEPTOS?</h2>
+       <table>
+   	    <?php for($i=0; $i<$num_materia ; $i++) { ?>
+          <tr>
+            <th>
+            <?php
+               echo  '<a href="admin/newconcepto/'.$this->materia[$i]['id'].'">'. $this->materia[$i]['nombre'].'</a>';
+            ?>
+            </th>
+          </tr>
+        <?php	
+           }        
+        ?>
+       </table>
+   </div>
+ 
+</div>
+<div class="clear"></div>   

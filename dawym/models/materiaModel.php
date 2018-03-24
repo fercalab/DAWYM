@@ -2,6 +2,7 @@
 class materiaModel extends Model {
 	
 	public $id;
+	public $titulo;
 	public $materia;
 
 	function __construct() {
