@@ -81,7 +81,7 @@ h4 { margin: 0 0 0 110px; }
                   }
   .botonAdmin a:hover { background-color: #77F; color: red; }
 
-                                                   
+.formulario { text-align: center; }                                                   
 #footer { position: absolute;
           bottom: 0px;}
    #footer a img { width: 50px;

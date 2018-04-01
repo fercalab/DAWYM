@@ -7,6 +7,7 @@ class adminModel extends Model {
 	public $ufo;
 	public $data;
   public $quemateria;
+  public $queufo;
 
 	public function create( $quemateria = '') {
 
@@ -15,38 +16,44 @@ class adminModel extends Model {
    
   }
 
-	public function read() {
+	public function read($id = ''){
 
-		$this->query = "SELECT * FROM materias";
-        $this->get_query();
+    $this->query = ($id != '')
+       ?"SELECT * FROM materias WHERE id = $id"
+       :"SELECT * FROM materias";
+
+       $this->get_query();
        
-        $quemateria = array();
+       $quemateria = array();
 
        foreach ($this->rows as $key => $value) {
 
-       	        $quemateria[$key] = $value;
+           $quemateria[$key] = $value;
        }
 
-       return $quemateria;  
+       return $quemateria;
 	}
 
 	public function update() {}
 
 	public function delete() {}
   
-  public function dimeufos() {
+  public function dimeufos($id = '') {
         
-        $this->query = "SELECT id, nombre FROM temas ORDER BY nombre";
+        $this->query = ($id != '')
+           ?"SELECT nombre FROM temas WHERE id = $id"
+           :"SELECT id, nombre FROM temas ORDER BY nombre";
+
         $this->get_query();
        
-        $data = array();
+        $queufo = array();
 
        foreach ($this->rows as $key => $value) {
 
-                $data[$key] = $value;
+                $queufo[$key] = $value;
        }
 
-       return $data;  
+       return $queufo;  
 
   }
 

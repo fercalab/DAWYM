@@ -1,3 +1,6 @@
 ﻿DAWYM
-desarrollo vista/modelo/controller conceptos añadiendo indices con navegación a otras ufos y listado de conceptos
+desarrollado filtrado POST
+crear materias-> desarrollada confirmación crear nueva materia
+ufo-> vista/controller desarrollado lista conceptos menus/indices laterales
+
 

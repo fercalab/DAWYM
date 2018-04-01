@@ -1,7 +1,7 @@
 <div id="headerlong">
 
 <div id="menu">
-	<?php
+<?php
        if(isset($_layoutParams['menu'])){
 
        	  for ($i=0; $i<count($_layoutParams['menu']);$i++) {
@@ -25,39 +25,22 @@
         "<?php echo $_layoutParams['ruta_img'];?>dawymLogo.png"
      alt="Desarrollo de Aplicaciones" title="Desarrollo de Aplicaciones">
 
-    <h1><?php echo $this->titulo;?></h1>
+    <h1><?php echo $this->titulo;?><?php echo strtoupper($this->materiaxid[0]["nombre"]);?></h1>
 
     <br><hr><hr><br><hr><br>
 
-  <div class="formulario">   
-     <form name="materiaform" method="POST" action="<?php echo BASE_URL;?>admin/newmateria">
-
-       <input type="hidden" name="guardar" value="1">
+  <div class="formulario"> 
+     <form name="ufoform" action="<?php echo BASE_URL;?>admin/newmufo">
+      
      	<p>
-     		MATERIA : <input type="text" name="nombre"/>
+     		UFO : <input type="text" name="nombre"/>
      	</p>
       <br>
-     	<input type="submit" class="botonAdmin" name="confirmamateria" value="GUARDAR NUEVA MATERIA" />
+     	<input type="submit" name="confirmaufo" value="GUARDAR NUEVA UFO" />
 
      </form>
      <br>
       <hr>
-      <?php
-        if (isset($this->materianew) && !empty($this->materianew)) {
-
-            echo "<h3>CONFIRMAS QUE QUIERES CREAR ";
-            echo $this->materianew;
-            echo " COMO NUEVA MATERIA</h3><br>";
-            ?>
-            <div class="botonAdmin">
-                <a href=""> CREAR MATERIA</a>
-           </div>
-           <div class="botonAdmin">
-                <a href="<?php echo BASE_URL;?>admin"> CANCELAR</a>
-           </div>
-      <?php     
-        }
-      ?>
   </div>
-    
+  
 </div>   

@@ -70,6 +70,7 @@ abstract class Controller {
     }
 
    protected function redireccionar($ruta = false) {
+    
         if($ruta) {
 
             header('location:' . BASE_URL . $ruta);

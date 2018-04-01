@@ -20,7 +20,12 @@ class View {
                        'titulo'=>'materias',
                        'enlace'=>BASE_URL.'materia'
                     ),
-                array (
+                 array (
+                       'id'=>'indice',
+                       'titulo'=>'indice',
+                       'enlace'=>BASE_URL.'indice'
+                    ),
+                 array (
                        'id'=>'admin',
                        'titulo'=>'admin',
                        'enlace'=>BASE_URL.'admin'

@@ -1,4 +1,54 @@
-<?php
+<div id="headerlong">
 
-  
-?>
+<div id="menu">
+<?php
+       if(isset($_layoutParams['menu'])){
+
+       	  for ($i=0; $i<count($_layoutParams['menu']);$i++) {
+
+       	  	 ($_layoutParams['menu'][$i]['id'] == $item)? $estilo = 'botonActivado'
+       	  	                                            : $estilo = 'botonMenu';
+       	  	 
+    ?>
+             <div class="<?php echo $estilo; ?>">
+                 <a href="<?php echo $_layoutParams['menu'][$i]['enlace']; ?>">
+                 	<?php echo $_layoutParams['menu'][$i]['titulo']; ?>
+                 </a>
+             </div>
+    <?php
+       	  }
+       }
+	?>
+</div>
+
+     <img src=
+        "<?php echo $_layoutParams['ruta_img'];?>dawymLogo.png"
+     alt="Desarrollo de Aplicaciones" title="Desarrollo de Aplicaciones">
+
+    <h1>
+      <?php echo $this->titulo;?><?php echo strtoupper($this->ufoxid[0]["nombre"]);?>
+    </h1>
+
+    <br><hr><hr><br><hr><br>
+  <div class="formulario">   
+     <form name="conceptform" method="POST" action="<?php echo BASE_URL;?>admin/newconcepto">
+      
+     	<p>
+     		concepto : <input type="text" name="nombre" autofocus/>
+     	</p>
+     	<br>
+     	explicación:<br>
+     	<textarea name="explicacion" id="explicacion" rows="4" cols="90"></textarea>
+      <br>
+
+       <div class="botonAdmin"><a href="">AÑADIR VIDEO</a></div>
+       <div class="botonAdmin"><a href="">AÑADIR IMAGEN</a></div>
+       <div class="botonAdmin"><a href="">AÑADIR CODIGO</a></div>
+     	<input type="submit" name="confirmaufo" value="GUARDAR NUEVO CONCEPTO" />
+
+     </form>
+   </div>  
+     <br>
+      <hr>
+    
+</div>   

@@ -30,34 +30,31 @@
     <br><hr><hr><br><hr><br>
 
   <div class="formulario">   
-     <form name="materiaform" method="POST" action="<?php echo BASE_URL;?>admin/newmateria">
+     <form name="updatemateriaform" action="<?php echo BASE_URL;?>admin/updatemateria">
+      
+       <?php $num_materias = count($this->materia); 
 
-       <input type="hidden" name="guardar" value="1">
-     	<p>
-     		MATERIA : <input type="text" name="nombre"/>
-     	</p>
-      <br>
-     	<input type="submit" class="botonAdmin" name="confirmamateria" value="GUARDAR NUEVA MATERIA" />
+           for ($i=0;$i<$num_materias;$i++) { 
+        ?>
+           <p> 
+            <input type="text" name="" value="<?php echo $this->materia[$i]['nombre']; ?>">
+            <input type="submit" name="" value="GUARDAR CAMBIOS MATERIA"/>
+           </p>
+       <?php   
+           }
+        ?>
+     	
+     	 
 
      </form>
      <br>
       <hr>
-      <?php
-        if (isset($this->materianew) && !empty($this->materianew)) {
-
-            echo "<h3>CONFIRMAS QUE QUIERES CREAR ";
-            echo $this->materianew;
-            echo " COMO NUEVA MATERIA</h3><br>";
-            ?>
-            <div class="botonAdmin">
-                <a href=""> CREAR MATERIA</a>
-           </div>
-           <div class="botonAdmin">
-                <a href="<?php echo BASE_URL;?>admin"> CANCELAR</a>
-           </div>
-      <?php     
-        }
-      ?>
   </div>
     
 </div>   
+  
+
+
+
+
+  
