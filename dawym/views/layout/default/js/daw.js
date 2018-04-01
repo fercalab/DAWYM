@@ -3,13 +3,13 @@ var btnCrearUfo = document.getElementById('botonAdminCreaUfo');
 var btnCrearConcept = document.querySelector('#botonAdminCreaConcepto');*/
 
 function vermateria(){
-  document.getElementById('aparecenmaterias').style.display = 'block';
   document.getElementById('aparecenufos').style.display = 'none';
+  document.getElementById('aparecenmaterias').style.display = 'block';  
 }
 
 function verufo(){
-  document.getElementById('aparecenufos').style.display = 'block';
   document.getElementById('aparecenmaterias').style.display = 'none';
+  document.getElementById('aparecenufos').style.display = 'block';
 }
 
 /*function cargafunciones(){

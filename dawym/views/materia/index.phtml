@@ -18,6 +18,7 @@
     </h4>
 
   <?php $num_ufos = count($this->materia); ?>
+  
   <div id="materias"> 
      <table>
       <?php for($i=0;$i<$num_ufos;$i++){ ?>
@@ -25,7 +26,7 @@
             
             <th>
             <?php
-               echo  '<a href="../ufo/index.phtml?ufo='.$this->materia[$i]['id'].'">'. $this->materia[$i]['nombre'].'</a>';
+               echo  '<a href="'.BASE_URL.'ufo/index.phtml?ufo='.$this->materia[$i]['id'].'&materia='.$this->materia[$i]['id_materia'].'">'.$this->materia[$i]['nombre'].'</a>';
              ?>
             </th>
          </tr>
@@ -33,26 +34,30 @@
       <?php } ?>
      </table>
   </div>
+
 </div>
 
-<div id="menu">
-  <?php
+  <div id="menu">
+    <?php
        if(isset($_layoutParams['menu'])){
 
           for ($i=0; $i<count($_layoutParams['menu']);$i++) {
 
              ($_layoutParams['menu'][$i]['id'] == $item)? $estilo = 'botonActivado'
-                                                        : $estilo = 'botonMenu';
-             
-  ?>
+                                                        : $estilo = 'botonMenu';           
+    ?>
              <div class="<?php echo $estilo; ?>">
                  <a href="<?php echo $_layoutParams['menu'][$i]['enlace']; ?>">
                   <?php echo $_layoutParams['menu'][$i]['titulo']; ?>
                  </a>
              </div>
-  <?php
+     <?php
           }
        }
-  ?>
-</div>
+     ?>
+  </div>
+
+
+
+
  

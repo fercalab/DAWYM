@@ -26,6 +26,7 @@
      alt="Desarrollo de Aplicaciones" title="Desarrollo de Aplicaciones">
 
     <h1>ADMINISTRACION</h1>
+    <hr><hr><br><hr><br>
      <h4>CREAR</h4>
   <div id="menuAdmin">
 
@@ -42,7 +43,7 @@
     </div>
 
   </div> 
-  <hr><br><hr>
+  <hr><br><hr><hr><br><hr><br>
   <h4>MODIFICAR</h4>
   <div id="menuAdmin">
 
@@ -59,7 +60,7 @@
     </div>
 
   </div> 
-  <hr><br><hr>
+  <hr><br><hr><hr>
 
 
 </div>
@@ -84,14 +85,15 @@
    </div>
 
    <div id="aparecenufos">
-   	 <?php $num_materia = count($this->materia); ?>
-    <h2>EN QUE MATERIA QUIERES CREAR NUEVOS CONCEPTOS?</h2>
+   	 <?php $num_ufo = count($this->ufo); ?>
+    <h2>EN QUE UFO QUIERES CREAR NUEVOS CONCEPTOS?</h2>
+
        <table>
-   	    <?php for($i=0; $i<$num_materia ; $i++) { ?>
+   	    <?php for($i=0; $i<$num_ufo ; $i++) { ?>
           <tr>
             <th>
             <?php
-               echo  '<a href="admin/newconcepto/'.$this->materia[$i]['id'].'">'. $this->materia[$i]['nombre'].'</a>';
+               echo '<a href="admin/newconcepto/'.$this->ufo[$i]['id'].'">'. $this->ufo[$i]['nombre'].'</a>';
             ?>
             </th>
           </tr>
@@ -99,7 +101,9 @@
            }        
         ?>
        </table>
+       
    </div>
+
  
 </div>
 <div class="clear"></div>   

@@ -4,7 +4,6 @@ abstract class Model {
 	private static $db_user = 'root';
 	private static $db_pass = 'AvecesNoMeGusta';
 	private static $db_name = 'daw';
-	//protected $db_name;
 	private static $db_charset = 'utf8';
 	private $conn;
 	protected $query;

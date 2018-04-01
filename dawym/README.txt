@@ -1,8 +1,3 @@
 ﻿DAWYM
-
-
-creada la navegacion de crear materias, ufos y conceptos en admin
-
-creado newconcepto.phtml y newufo.phtml
-
+desarrollo vista/modelo/controller conceptos añadiendo indices con navegación a otras ufos y listado de conceptos
 

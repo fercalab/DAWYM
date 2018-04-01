@@ -26,6 +26,7 @@
      alt="Desarrollo de Aplicaciones" title="Desarrollo de Aplicaciones">
 
     <h1><?php echo NOMBRE_APP; ?></h1>
+
    <h4>
     <?php 
        if(isset($this->ufo[0]["nombre"])){
@@ -36,22 +37,61 @@
     ?>	
     </h4>
 
- 
+ <?php $num_conceptos = count($this->ufo); ?>
+ <div id="baner">
+   
+   <hr>
+    <h5>UF de esta materia</h5>
+    <hr>
 
-  <?php $num_conceptos = count($this->ufo); ?>
-  <div id="conceptos" class="concepto"> 
-   <table>
-    <?php for($n=0;$n<$num_conceptos;$n++){ ?>
-        <tr>
-            <th>
+    <?php $num_ufos = count($this->ufos); ?>
+    <?php for($i=0;$i<$num_ufos;$i++){ ?>
+
+      <ul>
+          <a href="index.phtml?ufo= <?php echo $this->ufos[$i]['id'].'&materia='.$this->ufos[$i]['id_materia']; ?> ">
+               <?php echo $this->ufos[$i]['nombre']; ?>       
+          </a><hr>
+      </ul> 
+
+    <?php } ?>
+
+   <hr>
+   <h5>índice</h5>
+   <h5>
+     <?php 
+       if(isset($this->ufo[0]["nombre"])){
+            echo $this->ufo[0]["nombre"];
+       } else {
+            echo "No hay conceptos";
+       }
+    ?>  
+   </h5>
+   <hr>
+
+     <?php for($i=0;$i<$num_conceptos;$i++){ ?>
+
+       <ul><a href=""><?php echo $this->ordenaConcept[$i]['palabra']; ?></a></ul> 
+
+     <?php } ?>
+    
+ </div>
+
+  
+  <div id="conceptos"> 
+     <br>
+
+    <?php
+
+
+       for($n=0;$n<$num_conceptos;$n++){ ?>
+        
             <?php
-               echo  '<a href="#">'. $this->ufo[$n]['palabra'].'</a> <p>'. $this->ufo[$n]['concepto'].'</p>';
+               echo  '<span>'.$this->ufo[$n]['palabra'].'</span> <p>'. $this->ufo[$n]['concepto'].'</p><hr><br>';
             ?>
-            </th>            
-        </tr>
+           
          
      <?php } ?>
-    </table>
+    
    </div>
 </div>
 

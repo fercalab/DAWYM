@@ -17,9 +17,11 @@ abstract class Controller {
 		if (is_readable($rutaModelo)) {
                 
 			    require_once $rutaModelo;
-			    
-		} else {
-			
+			    $modelo = new $modelo;
+
+			    return $modelo;
+
+		} else {			
 			throw new Exception("Error cargando el modelo");	
 		}
 	}
@@ -35,6 +37,54 @@ abstract class Controller {
 
          return '';
 	}
+
+	 protected function getInt($clave) {
+
+        if(isset($_POST[$clave]) && !empty($_POST[$clave])){
+
+            $_POST[$clave] = filter_input(INPUT_POST, $clave, FILTER_VALIDATE_INT);
+
+            return $_POST[$clave];
+        }
+        
+        return 0;
+    }
+
+    protected function getAlphaNum($clave) {
+
+        if(isset($_POST[$clave]) && !empty($_POST[$clave])) {
+
+            $_POST[$clave] = (string) preg_replace('/[^A-Z0-9_]/i', '', $_POST[$clave]);
+
+            return trim($_POST[$clave]);
+        }
+        
+    }
+
+     protected function getPostParam($clave) {
+
+        if(isset($_POST[$clave])) {
+
+            return $_POST[$clave];
+        }
+    }
+
+   protected function redireccionar($ruta = false) {
+        if($ruta) {
+
+            header('location:' . BASE_URL . $ruta);
+            exit;
+
+        } else {
+
+            header('location:' . BASE_URL);
+            exit;
+        }
+    }
+
+    public function __destruct() {
+    	     unset($this);
+    }
 
 }
 

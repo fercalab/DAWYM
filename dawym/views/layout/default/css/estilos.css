@@ -1,6 +1,7 @@
 * { margin: 0; padding: 0; }
 a { text-decoration: none;
-     text-shadow: 1px .5px #000; }
+    text-shadow: 1px .5px #000;
+  }
   a:hover { color:red;}   
 h1, h4, a { color: #808080; }
 h1 { margin: 0 0 0 100px;
@@ -26,7 +27,8 @@ h4 { margin: 0 0 0 110px; }
 #contenido {  float: right; width: 50%; }
   #aparecenmaterias { text-align: center; display: none; }
   #aparecenufos {  display: none; }
-    #aparecenmaterias h2, #aparecenufos h2 { margin: 120px 0 50px 0; }
+    #aparecenufos h2 { text-align: center; }
+    #aparecenmaterias h2 { margin: 120px 0 50px 0; }
     #aparecenmaterias a, #aparecenufos a { margin: 0 150px; }
 
 
@@ -35,25 +37,40 @@ h4 { margin: 0 0 0 110px; }
                  text-indent: 10px;
                  cursor: pointer; 
                }
-
     #materias th:hover { color:red;
                          text-shadow: 1px .5px #000;
                        }
 
-#conceptos { color: #000;}
-  #conceptos th { text-align: left;
+#baner { width: 15%; 
+          height: 100%; 
+          min-height: 100%;
+          border: ridge 7px #5F9EA0;
+          border-radius: 3%;
+          float: right;
+          background-color: #E6E6FA;
+          margin: 25px 3px 0 0;
+          padding: 0 5px 0 1px;}
+  #baner h5 { text-align: center;
+              font-weight: bold;
+              background-color: #D5D5D5;  }
+    #baner ul a { font-size: 0.9em; }                  
+    #baner hr { border: ridge #5F9EA0;}
 
-                 color:#808080;
-                 text-indent: 10px;
-                 cursor: pointer; 
-               }
-  #conceptos p, li { text-indent: 20px; font-size: 1.2em;}         
-.termino { color: blue;
-           text-indent: 100px; 
-         }
-  .termino dfn { color: #000;
-                 font-weight: bold;
-               }
+#conceptos { background-color: #E1E1FA;
+             border: ridge 4px #5F9EA0;
+             border-radius: 2%;
+             padding: 0 5px 0 0; }          
+  #conceptos span { color: #000;
+                    font-weight: bold;
+                    margin: 5px;
+                    text-decoration: underline;
+                 -webkit-text-decoration-color: ridge #5F9EA0; /* Safari */    
+                 text-decoration-color: ridge #5F9EA0;  }
+  #conceptos ul { margin: 0 0 0 15px; }
+  #conceptos p { margin: 4px 0 8px 8px; }
+  #conceptos hr { border: ridge 0.7px #5F9EA0;}
+ 
+
 
 #menuAdmin { text-align: center; }
 .botonAdmin { margin: 22px 18px; }
@@ -63,13 +80,14 @@ h4 { margin: 0 0 0 110px; }
                  padding: 3px 10px;
                   }
   .botonAdmin a:hover { background-color: #77F; color: red; }
+
                                                    
 #footer { position: absolute;
           bottom: 0px;}
    #footer a img { width: 50px;
    	               height: 50px;
-                    margin: 0 50px; 
+                   margin: 0 50px; 
                  }                                 
    #footer span {  color: #808080;
-                 padding: 0 0 0 200px;
+                   padding: 0 0 0 200px;
                 }

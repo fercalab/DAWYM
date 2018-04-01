@@ -18,7 +18,7 @@ class View {
                 array (
                        'id'=>'materias',
                        'titulo'=>'materias',
-                       'enlace'=>BASE_URL
+                       'enlace'=>BASE_URL.'materia'
                     ),
                 array (
                        'id'=>'admin',
@@ -27,7 +27,7 @@ class View {
                     )
             );
 
-        $_layoutParams= array(
+        $_layoutParams = array(
                             'ruta_css'=> BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/css/',
                             'ruta_img'=> BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/img/',
                             'ruta_js'=> BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/js/',
@@ -35,7 +35,7 @@ class View {
                         );
         
         
-    	$rutaView= ROOT.'views'.DS.$this->_controlador.DS.$vista.'.phtml';
+    	$rutaView = ROOT.'views'.DS.$this->_controlador.DS.$vista.'.phtml';
 
     	if(is_readable($rutaView)) {
 
