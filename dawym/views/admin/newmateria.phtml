@@ -9,7 +9,7 @@
        	  	 ($_layoutParams['menu'][$i]['id'] == $item)? $estilo = 'botonActivado'
        	  	                                            : $estilo = 'botonMenu';
        	  	 
-    ?>
+   ?>
              <div class="<?php echo $estilo; ?>">
                  <a href="<?php echo $_layoutParams['menu'][$i]['enlace']; ?>">
                  	<?php echo $_layoutParams['menu'][$i]['titulo']; ?>
@@ -18,7 +18,7 @@
     <?php
        	  }
        }
-	?>
+	   ?>
 </div>
 
      <img src=
@@ -29,17 +29,18 @@
 
     <br><hr><hr><br><hr><br>
 
-  <div class="formulario">   
-     <form name="materiaform" method="POST" action="<?php echo BASE_URL;?>admin/newmateria">
+  <div class="formulario">
+
+    <form name="materiaform" method="POST" action="<?php echo BASE_URL;?>admin/newmateria">
 
        <input type="hidden" name="guardar" value="1">
      	<p>
      		MATERIA : <input type="text" name="nombre"/>
      	</p>
       <br>
-     	<input type="submit" class="botonAdmin" name="confirmamateria" value="GUARDAR NUEVA MATERIA" />
+     	<input type="submit" class="botonform" name="confirmamateria" value="GUARDAR NUEVA MATERIA" />
 
-     </form>
+    </form>
      <br>
       <hr>
       <?php
@@ -47,17 +48,20 @@
 
             echo "<h3>CONFIRMAS QUE QUIERES CREAR ";
             echo $this->materianew;
-            echo " COMO NUEVA MATERIA</h3><br>";
-            ?>
+            
+       ?>
+             COMO NUEVA MATERIA</h3><br>
+
             <div class="botonAdmin">
-                <a href=""> CREAR MATERIA</a>
+                <a href=""> CONFIRMAR</a>
            </div>
+
            <div class="botonAdmin">
                 <a href="<?php echo BASE_URL;?>admin"> CANCELAR</a>
            </div>
       <?php     
         }
-      ?>
+       ?>
   </div>
     
 </div>   

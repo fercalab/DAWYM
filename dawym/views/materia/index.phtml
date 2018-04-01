@@ -1,5 +1,25 @@
 <div id="header">
 
+  <div id="menu">
+    <?php
+       if(isset($_layoutParams['menu'])){
+
+          for ($i=0; $i<count($_layoutParams['menu']);$i++) {
+
+             ($_layoutParams['menu'][$i]['id'] == $item)? $estilo = 'botonActivado'
+                                                        : $estilo = 'botonMenu';           
+    ?>
+             <div class="<?php echo $estilo; ?>">
+                 <a href="<?php echo $_layoutParams['menu'][$i]['enlace']; ?>">
+                  <?php echo $_layoutParams['menu'][$i]['titulo']; ?>
+                 </a>
+             </div>
+     <?php
+          }
+       }
+     ?>
+  </div>
+
      <img src=
         "<?php echo $_layoutParams['ruta_img'];?>dawymLogo.png"
      alt="Desarrollo de Aplicaciones" title="Desarrollo de Aplicaciones">
@@ -37,25 +57,7 @@
 
 </div>
 
-  <div id="menu">
-    <?php
-       if(isset($_layoutParams['menu'])){
-
-          for ($i=0; $i<count($_layoutParams['menu']);$i++) {
-
-             ($_layoutParams['menu'][$i]['id'] == $item)? $estilo = 'botonActivado'
-                                                        : $estilo = 'botonMenu';           
-    ?>
-             <div class="<?php echo $estilo; ?>">
-                 <a href="<?php echo $_layoutParams['menu'][$i]['enlace']; ?>">
-                  <?php echo $_layoutParams['menu'][$i]['titulo']; ?>
-                 </a>
-             </div>
-     <?php
-          }
-       }
-     ?>
-  </div>
+  
 
 
 

@@ -69,6 +69,21 @@ abstract class Controller {
         }
     }
 
+    protected function filtrarInt($id) {
+
+            $id = (int)$id;
+
+            if (is_int($id)) {
+
+               return $id;
+
+            } else {
+                
+               return 0; 
+            }
+            
+    }
+
    protected function redireccionar($ruta = false) {
     
         if($ruta) {

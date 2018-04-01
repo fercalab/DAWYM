@@ -1,6 +1,9 @@
 ﻿DAWYM
-desarrollado filtrado POST
-crear materias-> desarrollada confirmación crear nueva materia
-ufo-> vista/controller desarrollado lista conceptos menus/indices laterales
+inicio de restricciones en el control de acceso
+
+creo la clase Session y manejador de errores-> errorController
+vista error.phtml
+
+comienzo el sistema de loging
 
 
