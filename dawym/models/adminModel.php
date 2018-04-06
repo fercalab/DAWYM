@@ -37,11 +37,28 @@ class adminModel extends Model {
 	public function update() {}
 
 	public function delete() {}
+
+  public function dimeufosymateria() {
+
+    $this->query = "SELECT materias.nombre AS materia, temas.id, temas.nombre FROM materias, temas WHERE materias.id = temas.id_materia"; 
+
+        $this->get_query();
+       
+        $matufo = array();
+
+       foreach ($this->rows as $key => $value) {
+
+                $matufo[$key] = $value;
+       }
+
+     return $matufo;
+
+  }
   
   public function dimeufos($id = '') {
         
         $this->query = ($id != '')
-           ?"SELECT nombre FROM temas WHERE id = $id"
+           ?"SELECT id, nombre FROM temas WHERE id = $id"
            :"SELECT id, nombre FROM temas ORDER BY nombre";
 
         $this->get_query();

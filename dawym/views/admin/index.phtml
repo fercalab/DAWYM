@@ -89,12 +89,20 @@
    	 <?php $num_ufo = count($this->ufo); ?>
     <h2>EN QUE UFO QUIERES CREAR NUEVOS CONCEPTOS?</h2>
 
+
        <table>
    	    <?php for($i=0; $i<$num_ufo ; $i++) { ?>
           <tr>
             <th>
             <?php
-               echo '<a href="admin/newconcepto/?ufo='.$this->ufo[$i]['id'].'">'. $this->ufo[$i]['nombre'].'</a>';
+              //solo nos muestra el nombre de la materia una vez
+              //mientras las ufos sean de esa misma materia
+              if (!isset($condicion) || $condicion != $this->ufo[$i]['materia']) {
+               echo '<br>'.$this->ufo[$i]['materia'].'<br>';
+              }
+               
+               $condicion = $this->ufo[$i]['materia'];
+               echo '<a href="'.BASE_URL.'admin/newconcepto/?ufo='.$this->ufo[$i]['id'].'">'. $this->ufo[$i]['nombre'].'</a>';
             ?>
             </th>
           </tr>
@@ -107,4 +115,10 @@
 
  
 </div>
-<div class="clear"></div>   
+<div class="clear"></div> 
+<div id="footerMini">
+
+</div>
+</body>
+</html>
+<!--       

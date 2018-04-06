@@ -11,7 +11,7 @@ class materiaModel extends Model {
 
 		$this->query = ($id != '')
 		   ?"SELECT ma.nombre As titulo, te.nombre, te.id, te.id_materia FROM materias AS ma, temas AS te WHERE ma.id = te.id_materia AND ma.id = $id"
-		   :"SELECT * FROM temas ORDER BY nombre";
+		   :"SELECT ma.nombre As titulo, te.nombre, te.id, te.id_materia FROM materias AS ma, temas AS te WHERE ma.id = te.id_materia ";
 
        $this->get_query();
        

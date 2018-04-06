@@ -19,7 +19,7 @@ class adminController extends Controller {
 
 		$this->_view->titulo = 'ADMINISTRACION';
         $this->_view->materia = $this->_admin->read();
-        $this->_view->ufo = $this->_data->dimeufos(); 
+        $this->_view->ufo = $this->_data->dimeufosymateria(); 
         $this->_view->renderizar('index','admin');  
 	}
 
@@ -59,6 +59,25 @@ class adminController extends Controller {
         $this->_view->materia = $this->_admin->read();
         $this->_view->renderizar('updatemateria','admin');
     }
+
+    public function multimedia() { 
+
+        if (isset($_FILES['imagen'])) {
+           
+           $dir_subida = ROOT.'public'.DS.'img'.DS;
+           $fichero_subido = $dir_subida . basename($_FILES['imagen']['name']);
+
+            if (move_uploaded_file($_FILES['imagen']['tmp_name'], $fichero_subido)) {
+                 echo "El fichero es válido y se subió con éxito.\n";
+            } else {
+                 echo "¡Posible ataque de subida de ficheros!\n";
+            } 
+        }
+        //HAY QUE DAR NOMBRE;SIZE;GUARDAR EN DB;COMPROBAR TYPE
+       
+        $this->_view->renderizar('multimedia','admin');
+    }
+
 
      public function __destruct() {
              unset($this);

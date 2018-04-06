@@ -27,10 +27,10 @@
     <h1><?php echo NOMBRE_APP; ?></h1>
    
     <h4>
-    <?php if(isset($this->materia[0]["titulo"])) {
+    <?php if(isset($_GET['materia']) && isset($this->materia[0]["titulo"])) {
               echo $this->materia[0]["titulo"];
           } else {
-              echo "Listado de temas";
+              echo "Listado contenidos de materias";
           }  
 
 
@@ -43,10 +43,19 @@
      <table>
       <?php for($i=0;$i<$num_ufos;$i++){ ?>
         <tr>
-            
-            <th>
-            <?php
-               echo  '<a href="'.BASE_URL.'ufo/index.phtml?ufo='.$this->materia[$i]['id'].'&materia='.$this->materia[$i]['id_materia'].'">'.$this->materia[$i]['nombre'].'</a>';
+          <th> 
+          <?php
+               //solo nos muestra el nombre de la materia una vez
+              //mientras las ufos sean de esa misma materia
+            if (!isset($_GET['materia'])) {
+                if (!isset($condicion) || $condicion != $this->materia[$i]['titulo']) {
+                      echo '<br>'.$this->materia[$i]['titulo'].'<br>';
+                    }
+               
+               $condicion = $this->materia[$i]['titulo'];
+              }
+           
+               echo '<a href="'.BASE_URL.'ufo/index.phtml?ufo='.$this->materia[$i]['id'].'&materia='.$this->materia[$i]['id_materia'].'">'.$this->materia[$i]['nombre'].'</a>';
              ?>
             </th>
          </tr>
@@ -56,6 +65,12 @@
   </div>
 
 </div>
+<div id="footerMini">
+
+</div>
+</body>
+</html>
+<!--     
 
   
 

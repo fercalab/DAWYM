@@ -85,12 +85,25 @@
 
        for($n=0;$n<$num_conceptos;$n++){ ?>
         
-            <?php
-               echo  '<span>'.$this->ufo[$n]['palabra'].'</span> <p>'. $this->ufo[$n]['concepto'].'</p><hr><br>';
-            ?>
-           
+      <?php
+               echo  '<span>'.$this->ufo[$n]['palabra'].'</span> <p>'. $this->ufo[$n]['concepto'];
+
+               if ($this->ufo[$n]['extra'] == 'SI') {
+                $concept = $this->ufo[$n]['id'];
+                $tema = $this->ufo[$n]['id_tema'];
+              ?>   
+                      <div class="botonVermas">
+                        <a href="<?php echo BASE_URL; ?>concepto/index.phtml?concept=<?php echo $concept.'&ufo='.$tema.'&materia='.$_GET['materia'];?>" 
+                         >VER MAS</a>
+                      </div>
+
+                      <div class="clear"></div>
+              <?php
+               }
+              
+              echo '</p><hr><br>';
          
-     <?php } ?>
+      } ?>
     
    </div>
 </div>

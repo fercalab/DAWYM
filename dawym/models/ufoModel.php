@@ -24,7 +24,7 @@ class ufoModel extends Model {
 	public function read($id = ''){
 
 		$this->query = ($id != '')
-		   ?"SELECT co.palabra, co.concepto, te.nombre, co.id, co.id_tema FROM conceptos AS co, temas AS te WHERE te.id = co.id_tema AND te.id = $id"
+		   ?"SELECT co.palabra, co.concepto, te.nombre, co.id, co.id_tema, co.extra FROM conceptos AS co, temas AS te WHERE te.id = co.id_tema AND te.id = $id"
 		   :"SELECT * FROM conceptos ORDER BY palabra";
 
        $this->get_query();

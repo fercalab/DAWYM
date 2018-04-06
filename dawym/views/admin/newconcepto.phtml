@@ -32,7 +32,7 @@
     <br><hr><hr><br><hr><br>
   <div class="formulario">   
      <form name="conceptform" method="POST" action="<?php echo BASE_URL;?>admin/newconcepto">
-      
+       <input type="hidden" name="ufo" value="<?php echo $this->ufoxid[0]['id']; ?>">
      	<p>
      		concepto : <input type="text" name="nombre" autofocus/>
      	</p>
@@ -40,14 +40,25 @@
      	explicación:<br>
      	<textarea name="explicacion" id="explicacion" rows="4" cols="90"></textarea>
       <br>
-
-       <div class="botonAdmin"><a href="">AÑADIR VIDEO</a></div>
-       <div class="botonAdmin"><a href="">AÑADIR IMAGEN</a></div>
-       <div class="botonAdmin"><a href="">AÑADIR CODIGO</a></div>
+            
+      <!-- PREGUNTAR SI QUIERE GUARDAR CONCEPTO, DEF y EXTRA=SI? GUARDAR EN DB
+          HAY QUE COMPROBAR SI LOS DATOS DEL FORM VIENEN VACIOS !!!!!!
+            traer este ultimo concepto y guardar id como varible para usar como FK
+                  PREGUNTAR SI QUIERE añadir multimedia 
+                    -->
      	<input type="submit" name="confirmaufo" value="GUARDAR NUEVO CONCEPTO" />
-
+      <!--  NECESITA ID CONCEPTO-->
      </form>
-   </div>  
+      <div class="botonAdmin">
+         <a href="<?php echo BASE_URL;?>admin/multimedia/?tipo=video">AÑADIR VIDEO</a>
+       </div>
+       <div class="botonAdmin">
+         <a href="<?php echo BASE_URL;?>admin/multimedia/?tipo=img">AÑADIR IMAGEN</a>
+       </div>
+       <div class="botonAdmin">
+         <a href="<?php echo BASE_URL;?>admin/multimedia/?tipo=codigo">AÑADIR CODIGO</a>
+       </div>
+  </div>  
      <br>
       <hr>
     

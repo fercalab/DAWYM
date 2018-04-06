@@ -1,0 +1,130 @@
+<div id="headerlong">
+
+   <div id="menu">
+  <?php
+       if(isset($_layoutParams['menu'])){
+
+          for ($i=0; $i<count($_layoutParams['menu']);$i++) {
+
+             ($_layoutParams['menu'][$i]['id'] == $item)? $estilo = 'botonActivado'
+                                                        : $estilo = 'botonMenu';
+             
+            ?>
+             <div class="<?php echo $estilo; ?>">
+                 <a href="<?php echo $_layoutParams['menu'][$i]['enlace']; ?>">
+                  <?php echo $_layoutParams['menu'][$i]['titulo']; ?>
+                 </a>
+             </div>
+            <?php
+          }
+       }
+   ?>
+    </div>
+
+     <img src=
+        "<?php echo $_layoutParams['ruta_img'];?>dawymLogo.png"
+     alt="Desarrollo de Aplicaciones" title="Desarrollo de Aplicaciones">
+
+    <h1><?php echo NOMBRE_APP; ?></h1>
+
+   <h4>
+    <?php 
+       if(isset($this->ufo[0]["nombre"])){
+            echo $this->queMateria[0]["nombre"].' > '.$this->ufo[0]["nombre"];
+       } else {
+            echo "Listado de conceptos";
+       }
+    ?>	
+    </h4>
+<!-- menu lateral indice ufos -->
+ 
+ <div id="baner">
+   
+   
+    
+
+    
+<!-- menu lateral indice conceptos -->
+   <hr>
+   <h5>índice</h5>
+   <h5>
+     <?php 
+       if(isset($this->ufo[0]["nombre"])){
+            echo $this->ufo[0]["nombre"];
+       } else {
+            echo "No hay conceptos";
+       }
+    ?>  
+   </h5>
+   <hr>
+     <?php $num_conceptos = count($this->ufo); 
+      for($i=0;$i<$num_conceptos;$i++) 
+      	{ ?>
+
+       <ul><a href=""><?php echo $this->ufo[$i]['palabra']; ?></a></ul> 
+
+  <?php } ?>
+    
+  </div>
+
+  <div id="conceptos">
+
+    <h3>
+      <?php echo $this->ufo[0]['palabra'];?>
+    </h3>
+    <h5> <?php echo $this->ufo[0]['concepto'];?></h5>
+  	
+    <?php
+     
+      	
+      	if (isset($this->detalle)) {
+
+      		  $contenidos = count($this->detalle);
+      		  
+      	   	for ($i=0; $i < $contenidos; $i++) { 
+      	   		
+      	   	
+      	   	   echo '<br>'.$this->detalle[$i]['titulo'];
+
+      	   	   $tipoArchivo = $this->detalle[$i]['tipo'];
+
+               switch ($tipoArchivo) {
+
+               	case 'FOTO':
+               		echo 'foto';
+               		break;
+
+                case 'VIDEO':
+               		echo '<br>'.$this->detalle[$i]['embed'];
+               		break;
+
+               	case 'CODIGO':
+               		echo '<br>código';
+               		break;			
+               	
+               	default:
+               		echo '<br>';
+               		break;
+               }
+
+               echo '<br><h5>'.$this->detalle[$i]['bajofoto'].'</h5>';
+      	   	}    
+      	}
+      
+
+    ?>
+  </div>
+
+  
+</div>
+
+
+
+<div id="footerMini">
+
+</div>
+</body>
+</html>
+<!--     
+
+ 
