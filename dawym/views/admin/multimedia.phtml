@@ -1,10 +1,109 @@
+<div id="headerlong">
+    <!-- MENU -->
+  <div id="menu">
+<?php
+       if(isset($_layoutParams['menu'])){
 
-<form name="subeform" action="<?php echo BASE_URL;?>admin/multimedia" method="POST" enctype="multipart/form-data">
-	
-	imagen:
-	<input type="file" name="imagen">
+       	  for ($i=0; $i<count($_layoutParams['menu']);$i++) {
 
-	<input type="submit" name="guardaImg" value="Guardar imagen">
+       	  	 ($_layoutParams['menu'][$i]['id'] == $item)? $estilo = 'botonActivado'
+       	  	                                            : $estilo = 'botonMenu';
+       	  	 
+    ?>
+             <div class="<?php echo $estilo; ?>">
+                 <a href="<?php echo $_layoutParams['menu'][$i]['enlace']; ?>">
+                 	<?php echo $_layoutParams['menu'][$i]['titulo']; ?>
+                 </a>
+             </div>
+    <?php
+       	  }
+       }
+	?>
+</div> <!-- FIN MENU -->
+      
+     <img src=
+        "<?php echo $_layoutParams['ruta_img'];?>dawymLogo.png"
+     alt="Desarrollo de Aplicaciones" title="Desarrollo de Aplicaciones">
+
+    <h1> <!-- Muestra titulo + el tipo['img','foto','video']-->
+      <?php
+       $tipo = $_GET['tipo'];
+       echo $this->titulo;?><?php echo strtoupper($tipo);
+       ?>
+    </h1>
+
+    <br><hr><hr><br><hr><br>
+    
+    <div class="formulario">
+    <?php
+
+     switch ($tipo) {
+     	//si lo que se quiere subir es una foto:
+     	case 'img':
+     		?>
+     		<h3>Escoge archivo para subir</h3>
+              <form name="subeform" action="<?php echo BASE_URL;?>admin/multimedia" method="POST" enctype="multipart/form-data">
+	           	Texto sobre la foto:<br>
+     	             <textarea name="titulo" id="titulo" rows="4" cols="90">
+    
+     	             </textarea>
+                 <br>
+                Texto bajo la foto:<br>
+     	             <textarea name="bajofoto" id="bajofoto" rows="4" cols="90">
+    
+     	             </textarea>
+                 <br> 
+	           imagen:
+	                 <input type="file" name="embed" id="embed">
+                     <!-- HAY QUE AÑADIR ID_CONCEPTO -->
+	                 <input type="hidden" name="tipo" id="tipo" value="IMG">
+	                 <input type="hidden" name="id_concepto" id="id_concepto" value="">
+                 <br><br>
+	               <input type="submit" name="guardaImg" value="Guardar Imagen">
 
 
-</form>
+               </form>
+     		<?php
+     	break;
+        //si lo que se quiere subir es un video:
+     	case 'video':
+     	     ?>
+     		   <h3>Rellena el campo embed con los datos del video</h3>
+     		   <form name="videoform" action="" method="POST">
+     		   	   Texto sobre el vídeo:<br>
+     	             <textarea name="titulo" id="titulo" rows="4" cols="90">
+    
+     	             </textarea>
+                   <br>
+                   Embed:<br>
+     	             <textarea name="embed" id="enbed" rows="4" cols="90">
+    
+     	             </textarea>
+                    <br> 
+                   Texto bajo el vídeo:<br>
+     	             <textarea name="bajofoto" id="bajofoto" rows="4" cols="90">
+    
+     	             </textarea>
+     	              <!-- HAY QUE AÑADIR ID_CONCEPTO -->
+	                 <input type="hidden" name="tipo" id="tipo" value="VIDEO">
+	                 <input type="hidden" name="id_concepto" id="id_concepto" value="">
+                    <br>
+                    <input type="submit" name="guardaVideo" value="Guardar Vídeo"> 
+     		   </form>
+     		<?php  
+     	break;
+        //si lo que se quiere subir es un código:
+     	case 'codigo':
+     		echo
+              "<h3>Pega tu codigo en el campo code</h3>";
+     	break;
+     	//si nos no llego GET tipo:
+     	default:
+     		echo '<h3>Ha ocorrido un error</h3>';
+     		break;
+     }
+    ?>
+
+    </div><!-- FIN DIV FORMULARIO-->
+
+</div>

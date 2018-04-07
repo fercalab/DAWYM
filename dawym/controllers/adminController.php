@@ -61,7 +61,7 @@ class adminController extends Controller {
     }
 
     public function multimedia() { 
-
+//HAY QUE DAR NOMBRE;SIZE;GUARDAR EN DB;COMPROBAR TYPE
         if (isset($_FILES['imagen'])) {
            
            $dir_subida = ROOT.'public'.DS.'img'.DS;
@@ -73,8 +73,8 @@ class adminController extends Controller {
                  echo "¡Posible ataque de subida de ficheros!\n";
             } 
         }
-        //HAY QUE DAR NOMBRE;SIZE;GUARDAR EN DB;COMPROBAR TYPE
-       
+        
+        $this->_view->titulo = 'ADJUNTAR ';
         $this->_view->renderizar('multimedia','admin');
     }
 
