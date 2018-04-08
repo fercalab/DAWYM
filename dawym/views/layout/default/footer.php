@@ -1,6 +1,6 @@
 
-<div id="footer">
 
+<footer>
     <a title="Java" href="https://docs.oracle.com/javase/7/docs/api/"  target="_blank">
 	  <img src="<?php echo $_layoutParams['ruta_img'];?>logojava.jpeg" alt="API JAVA" />
     </a>
@@ -17,6 +17,7 @@
 	  <img src="<?php echo $_layoutParams['ruta_img'];?>logoPhp.jpeg" alt="PHP" />
     </a>
 	<span><?php echo SLOGAN_APP; ?></span>
-</div>
+</footer>    
+
 </body>
 </html>

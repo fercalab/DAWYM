@@ -103,7 +103,7 @@ h4 { margin: 0 0 0 110px; }
   .botonAdmin a:hover { background-color: #77F; color: red; }
 
 .formulario { text-align: center; }                                                   
-#footer { position: absolute;
+/*#footer { position: absolute;
           bottom: 0px;}
    #footer a img { width: 50px;
    	               height: 50px;
@@ -111,4 +111,15 @@ h4 { margin: 0 0 0 110px; }
                  }                                 
    #footer span {  color: #808080;
                    padding: 0 0 0 200px;
-                }
+                }*/
+footer { position:fixed;
+         left:0px;
+         bottom:0px; 
+       }                
+footer a img { width: 50px;
+               height: 50px;
+               margin: 0 50px; 
+             }
+footer span {  color: #808080;
+               padding: 0 0 0 200px;
+            }                                   

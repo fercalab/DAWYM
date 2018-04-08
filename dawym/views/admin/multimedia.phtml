@@ -28,12 +28,12 @@
     <h1> <!-- Muestra titulo + el tipo['img','foto','video']-->
       <?php
        $tipo = $_GET['tipo'];
-       echo $this->titulo;?><?php echo strtoupper($tipo);
+       echo $this->titulo.' '.strtoupper($tipo);
        ?>
     </h1>
 
     <br><hr><hr><br><hr><br>
-    
+
     <div class="formulario">
     <?php
 
@@ -76,7 +76,7 @@
      	             </textarea>
                    <br>
                    Embed:<br>
-     	             <textarea name="embed" id="enbed" rows="4" cols="90">
+     	             <textarea name="embed" id="enbed" rows="6" cols="70">
     
      	             </textarea>
                     <br> 
@@ -94,8 +94,31 @@
      	break;
         //si lo que se quiere subir es un código:
      	case 'codigo':
-     		echo
-              "<h3>Pega tu codigo en el campo code</h3>";
+     	  ?>
+            <h3>Rellena el campo embed con los datos del código</h3>
+           <form name="codeform" action="" method="POST">
+               Texto sobre el código:<br>
+                   <textarea name="titulo" id="titulo" rows="4" cols="90">
+    
+                   </textarea>
+                   <br>
+                   Embed:<br>
+                   <textarea name="embed" id="enbed" rows="6" cols="70">
+    
+                   </textarea>
+                    <br> 
+                   Texto bajo el código:<br>
+                   <textarea name="bajofoto" id="bajofoto" rows="4" cols="90">
+    
+                   </textarea>
+                    <!-- HAY QUE AÑADIR ID_CONCEPTO -->
+                   <input type="hidden" name="tipo" id="tipo" value="VIDEO">
+                   <input type="hidden" name="id_concepto" id="id_concepto" value="">
+                    <br>
+                    <input type="submit" name="guardaVideo" value="Guardar Vídeo"> 
+           </form>
+
+        <?php
      	break;
      	//si nos no llego GET tipo:
      	default:
